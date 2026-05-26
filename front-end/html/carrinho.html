@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Carrinho</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/carrinho.css" />
+        <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Viga&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="container">
+                    <a href="#" class="logo">
+                        <img src="../img/logo.png" alt="Logo" />
+                    </a>
+                    <div class="menu-toggle" id="mobile-menu">
+                        <span class="bar1"></span>
+                        <span class="bar2"></span>
+                        <span class="bar3"></span>
+                    </div>
+                    <div class="nav-links">
+                        <a href="index.html" class="button">Home</a>
+                        <a href="cardapio.html" class="button">Cardápio</a>
+                        <a href="carrinho.html" class="button">Carrinho</a>
+                        <a href="sobre.html" class="button">Sobre Nós</a>
+                        <a href="perfil.php" class="button">Perfil</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div id="carrinho-items">
+                <div class="total-container">
+                    <h1><span id="total">0</span></h1>
+                </div>
+            </div>
+        </main>
+
+        <section>
+            <div id="carrinho"></div>
+            <div class="total" id="total"></div>
+
+            <div class="wrapper">
+                <div class="option">
+                    <input
+                        checked
+                        value="Dinheiro"
+                        name="pagamento"
+                        type="radio"
+                        class="input"
+                    />
+                    <div class="btn">
+                        <span class="span">Dinheiro</span>
+                    </div>
+                </div>
+                <div class="option">
+                    <input
+                        value="Cartão"
+                        name="pagamento"
+                        type="radio"
+                        class="input"
+                    />
+                    <div class="btn">
+                        <span class="span">Cartão</span>
+                    </div>
+                </div>
+                <div class="option">
+                    <input
+                        value="PIX"
+                        name="pagamento"
+                        type="radio"
+                        class="input"
+                    />
+                    <div class="btn">
+                        <span class="span">PIX</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="finalizar-btn" onclick="abrirModal()">
+                Finalizar Compra
+            </button>
+
+            <!-- modal de endereço -->
+
+            <div id="enderecoModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="fecharModal()">&times;</span>
+                    <h1>Insira seu Endereço de Entrega</h1>
+                    <form id="enderecoForm">
+                        <input
+                            type="text"
+                            class="input-field"
+                            id="nome"
+                            placeholder="Remetente"
+                            required
+                        />
+                        <input
+                            type="text"
+                            class="input-field"
+                            id="endereco"
+                            placeholder="Endereço"
+                            required
+                        />
+                        <input
+                            type="text"
+                            class="input-field"
+                            id="cidade"
+                            placeholder="Cidade"
+                            required
+                        />
+                        <input
+                            type="text"
+                            class="input-field"
+                            id="cep"
+                            placeholder="CEP"
+                            required
+                        />
+                        <button
+                            type="submit"
+                            class="finalizarmod-btn"
+                            onclick="finalizarPedido()"
+                        >
+                            Confirmar Pedido
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <script src="../../back-end/js/carrinho.js"></script>
+            <script src="../../back-end/js/mobile-menu.js"></script>
+        </footer>
+    </body>
+</html>

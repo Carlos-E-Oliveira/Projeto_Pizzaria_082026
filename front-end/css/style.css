@@ -1,0 +1,608 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Background */
+.pizza-container {
+    position: fixed;
+    bottom: 0; /* Fixa na parte inferior da tela */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(
+        -50%
+    ); /* Ajusta para que o centro da imagem fique alinhado */
+    overflow: hidden; /* Garante que apenas a parte visível será exibida */
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    z-index: -1;
+}
+
+.pizza-container img {
+    filter: blur(3px); /* Aplica o desfoque na imagem */
+    transform: translateY(45%); /* Move para baixo o pedaço visível */
+}
+
+body {
+    background: linear-gradient(to right, #6699cc, #6e4fc4);
+}
+
+.index-background {
+    background-image: url(../img/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    height: 100%;
+}
+
+.cardapio-background {
+    background-image: url(../img/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    height: 100%;
+}
+
+.sobre-background {
+    background-image: url(../img/sobrenos.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+    .sobre-background {
+        background-image: url(../img/back-sobre.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
+        height: 100%;
+    }
+}
+
+.gerenciamento {
+    background-image: url(../img/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    height: 100%;
+}
+
+/* Index */
+.index-background h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.index-background h2 {
+    font-family: 'Viga', sans-serif;
+    font-size: 5em;
+    color: #fff;
+    text-align: center;
+    margin-top: -25px;
+}
+
+.index-background h3 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1em;
+    color: #ffffff;
+    text-align: center;
+}
+
+.index-background p {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    margin-top: -20px;
+}
+
+.index-background main {
+    margin-top: 110px;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+/* Sobre nós */
+.sobre {
+    text-align: left;
+    font-family: 'Viga', sans-serif;
+    width: 100%;
+    padding: 50px 0;
+    font-size: 20px;
+    color: #000000;
+    margin-top: -95px;
+    max-width: 40%;
+    margin-left: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .sobre {
+        text-align: justify;
+        font-family: 'Viga', sans-serif;
+        width: 100%;
+        padding: 60px 0;
+        font-size: 20px;
+        color: #000000;
+        margin-top: -95px;
+        max-width: 80%;
+        margin-left: 30px;
+    }
+}
+
+.sobre-background h4 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.sobre-background h5 {
+    font-family: 'Viga', sans-serif;
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    font-size: 20px;
+    color: #000000;
+    margin-top: 0px;
+}
+
+.sobre-background h6 {
+    font-family: 'Viga', sans-serif;
+    width: 100%;
+    padding: 50px 0;
+    text-align: left;
+    font-size: 50px;
+    color: #000000;
+    margin-top: -30px;
+    margin-left: 30px;
+}
+
+.instagram-icon {
+    margin-left: 22px;
+}
+
+.instagram-link {
+    margin: 10px;
+}
+
+/* Menu de navegação */
+.logo img {
+    height: 75px;
+    width: auto;
+    margin: 15px;
+    z-index: +1;
+}
+
+/* Estilo padrão */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding-inline: 25px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-toggle {
+    display: none; /* Esconde o menu hamburguer no desktop */
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 45px;
+    z-index: 1;
+}
+
+.menu-toggle .bar1,
+.menu-toggle .bar2,
+.menu-toggle .bar3 {
+    background-color: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    transition: color 0.3s ease;
+}
+.menu-toggle .bar1.open,
+.menu-toggle .bar2.open,
+.menu-toggle .bar3.open {
+    background-color: black; /* aberto = preto */
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Esconde os links no mobile inicialmente */
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        text-align: center;
+        z-index: -1;
+        top: 0;
+        padding: 45px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+
+    .menu-toggle {
+        display: flex; /* Exibe o menu hamburguer no mobile */
+    }
+
+    .button {
+        width: 100%; /* Deixa os botões ocupando a largura total */
+        margin: 5px 0;
+    }
+
+    .container.invisible {
+        background: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(0px);
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+    }
+}
+
+button {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #f5efef;
+    z-index: 1;
+    background: #c41515;
+    position: relative;
+    font-weight: 100;
+    font-size: 13px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #891c2a;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+}
+
+button:hover {
+    color: #e8e8e8;
+}
+
+button:hover::before {
+    width: 100%;
+}
+
+/* Cardapio */
+
+/* TÍTULO */
+.cardapio-background h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2.5em;
+    color: #ffffff;
+    margin: 10px auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* LISTA DE PIZZAS */
+.pizza-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 20px;
+    gap: 30px;
+}
+
+.pizza-item {
+    background-color: #ffffff;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.pizza-item:hover {
+    transform: scale(1.03);
+}
+
+.pizza-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.pizza-item h4 {
+    margin: 15px 0 5px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.pizza-item p {
+    font-size: 1em;
+    color: #666;
+    margin-block: 7px;
+}
+
+/* BOTÕES */
+.pizza-item .buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cssbuttons-io-button {
+    height: 45px;
+    padding: 0 20px;
+    font-size: 14px;
+    border-radius: 50px;
+    border: none;
+    background: #14a73e;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.cssbuttons-io-button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+.cssbuttons-io-button svg {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .pizza-item {
+        width: 90%;
+    }
+
+    .pizza-list {
+        padding: 20px 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pizza-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px;
+    }
+
+    .pizza-item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .pizza-item img {
+        max-width: 145px;
+        margin-top: 50px;
+    }
+
+    .buttonVermelho {
+        padding: 15px 25px;
+        border: unset;
+        border-radius: 15px;
+        color: #f5efef;
+        z-index: 1;
+        background: #c41515;
+        position: relative;
+        font-weight: 100;
+        font-size: 13px;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+        overflow: hidden;
+    }
+
+    .buttonVermelho::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        border-radius: 15px;
+        background-color: #000000;
+        z-index: -1;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+    }
+
+    .buttonVermelho:hover {
+        color: #e8e8e8;
+    }
+
+    .buttonVermelho:hover::before {
+        width: 100%;
+    }
+
+    .cardapio-background h4 {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 2.5em;
+        color: #000000;
+        text-align: center;
+    }
+
+    .cardapio-background h1 {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 2.5em;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .pizza-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 140px;
+        height: 150px;
+        padding: 100px;
+        margin: 10px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pizza-item h4 {
+        font-size: 45px;
+        margin-top: -75px;
+        text-align: center;
+    }
+
+    .pizza-item p {
+        font-size: 20px;
+        margin-top: 12px;
+        color: #333;
+    }
+
+    .pizza-item img {
+        width: 300px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-top: 5px;
+    }
+
+    .pizza-item .buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .cssbuttons-io-button {
+        height: 45px;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: inherit;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 10px;
+        padding: 0.5em 0.8em;
+        color: white;
+        background: linear-gradient(
+            0deg,
+            rgba(20, 167, 62, 1) 0%,
+            rgba(102, 247, 113, 1) 100%
+        );
+        border: none;
+        box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+        border-radius: 10em;
+        transition: box-shadow 0.2s;
+    }
+
+    .cssbuttons-io-button:hover {
+        box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+    }
+
+    .cssbuttons-io-button svg {
+        margin-right: 4px;
+    }
+}
+
+.etapas {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 40px;
+}
+
+.etapas::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10%;
+    right: 10%;
+    height: 4px;
+    background-color: #ddd;
+    z-index: 0;
+}
+
+.etapa {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    flex: 1;
+}
+
+.etapa .ponto {
+    width: 25px;
+    height: 25px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: 2px solid #999;
+}
+
+.etapa.ativo .ponto {
+    background-color: green;
+    border-color: green;
+}
+
+.etapa .texto {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.etapa.ativo .texto {
+    color: green;
+    font-weight: bold;
+}

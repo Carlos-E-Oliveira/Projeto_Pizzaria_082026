@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Status do Pedido</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/login.css" />
+        <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Viga&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="container">
+                    <a href="#" class="logo">
+                        <img src="../img/logo.png" alt="Logo" />
+                    </a>
+                    <div class="menu-toggle" id="mobile-menu">
+                        <span class="bar1"></span>
+                        <span class="bar2"></span>
+                        <span class="bar3"></span>
+                    </div>
+                    <div class="nav-links">
+                        <a href="index.html" class="button">Home</a>
+                        <a href="cardapio.html" class="button">Cardápio</a>
+                        <a href="carrinho.html" class="button">Carrinho</a>
+                        <a href="sobre.html" class="button">Sobre Nós</a>
+                        <a href="perfil.php" class="button">Perfil</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="cadastroLogin">
+            <div id="form1" class="form1">
+                <div class="perfil">
+                    <img src="pizza-icon.png" />
+                </div>
+                <h2>Entrar</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input 
+                            type="text"
+                            name="email"
+                            placeholder="E-mail" />
+                    </div>
+                    <div class="input-group">
+                        <input
+                            type="password"
+                            name="senha"
+                            placeholder="Senha"
+                        />
+                    </div>
+                    <div class="input-group">
+                        <button class="buttonForm" type="submit">ENTRAR</button>
+                    </div>
+                    <div class="input-group">
+                        <button id="alternaCadastro" class="buttonForm">
+                            Ir para Cadastro
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="form2" class="form2 hidden">
+                <h2>Cadastre-se</h2>
+                <form id="cadastroForm">
+                    <div class="input-group">
+                        <input
+                            type="text"
+                            name="nome"
+                            placeholder="Nome completo"
+                        />
+                    </div>
+                    <div class="input-group">
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="E-mail"
+                        />
+                    </div>
+                    <div class="input-group">
+                        <input
+                            type="password"
+                            name="senha"
+                            placeholder="Senha"
+                        />
+                    </div>
+                    <div class="input-group">
+                        <button class="buttonForm" type="submit">
+                            CADASTRAR
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <button id="alternaLogin" class="buttonForm">
+                            Ir para Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <script src="../../back-end/js/mobile-menu.js"></script>
+            <script src="../../back-end/js/login.js"></script>
+        </footer>
+    </body>
+</html>

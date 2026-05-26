@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gerenciamento de Cardápio</title>
+        <link rel="stylesheet" href="../css/pizzas.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Viga&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body class="gerenciamento">
+        <header>
+            <nav>
+                <div class="container">
+                    <a href="#" class="logo">
+                        <img src="../img/logo.png" alt="Logo" />
+                    </a>
+                    <div class="menu-toggle" id="mobile-menu">
+                        <span class="bar1"></span>
+                        <span class="bar2"></span>
+                        <span class="bar3"></span>
+                    </div>
+                    <div class="nav-links">
+                        <a href="index.html" class="button">Home</a>
+                        <a href="cardapio.html" class="button">Cardápio</a>
+                        <a href="carrinho.html" class="button">Carrinho</a>
+                        <a href="sobre.html" class="button">Sobre Nós</a>
+                        <a href="perfil.php" class="button">Perfil</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- adicionar uma nova pizza -->
+        <div class="gerenciamento-container">
+            <aside class="menu-lateral">
+                <button onclick="mostrarSecao('cadastrarProdutos')">
+                    EDITAR PRODUTOS
+                </button>
+                <button onclick="mostrarSecao('produtos')">PRODUTOS</button>
+            </aside>
+
+            <main class="conteudo">
+                <section id="cadastrarProdutos" class="secao ativa">
+                    <h1>Adicionar Pizza</h1>
+                    <form id="form-add-pizza">
+                        <label>Nome da Pizza:</label>
+                        <input type="text" id="pizza-nome" required /><br />
+
+                        <label>Descrição:</label>
+                        <input
+                            type="text"
+                            id="pizza-descricao"
+                            required
+                        /><br />
+
+                        <label>Preço P (Pequena):</label>
+                        <input
+                            type="number"
+                            id="pizza-preco-p"
+                            required
+                        /><br />
+
+                        <label>Preço M (Média):</label>
+                        <input
+                            type="number"
+                            id="pizza-preco-m"
+                            required
+                        /><br />
+
+                        <label>Preço G (Grande):</label>
+                        <input
+                            type="number"
+                            id="pizza-preco-g"
+                            required
+                        /><br />
+
+                        <label for="imagem">Imagem da Pizza:</label>
+                        <input
+                            type="file"
+                            id="imagem"
+                            name="imagem"
+                            accept="image/*"
+                            required
+                        />
+
+                        <button type="submit">Adicionar Pizza</button>
+                    </form>
+                </section>
+            </main>
+            <main class="conteudo">
+                <section id="produtos" class="secao">
+                    <h3>Pizzas no Cardápio</h3>
+                    <ul id="lista-pizzas"></ul>
+                </section>
+            </main>
+        </div>
+
+        <footer>
+            <script src="../../back-end/js/gerenciamento.js"></script>
+            <script src="../../back-end/js/sessao.js"></script>
+            <script src="../../back-end/js/mobile-menu.js"></script>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+.perfil-container {
+    display: flex;
+    height: 75vh;
+    background: #4f4f4f;
+    border-radius: 40px;
+    overflow: hidden;
+    margin-inline: 2%;
+    margin-top: 15px;
+}
+
+.menu-lateral {
+    width: 200px;
+    background: #4f4f4f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-right: 2px solid gray;
+}
+
+.menu-lateral button {
+    padding: 25%;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-style: italic;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.menu-lateral button:hover {
+    background-color: #4f4f4f;
+}
+
+.conteudo {
+    flex: 1;
+    padding: 30px;
+    background: url('bg.jpg') center/cover no-repeat; /* pode trocar por fundo vermelho sólido */
+    overflow-y: auto;
+}
+
+.secao {
+    display: none;
+    color: #ffffff;
+}
+
+.secao.ativa {
+    display: block;
+}
+
+.pedido {
+    background-color: #891c2a;
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.repetir {
+    background: #f7f7f7;
+    color: black;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+}
