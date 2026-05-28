@@ -44,19 +44,23 @@
     <section class="resumo">
       <div>
         <strong>Pedidos do dia</strong>
-        <p id="total-dia">15</p>
+        <p id="total-dia">0</p>
       </div>
       <div>
         <strong>Concluídos</strong>
-        <p id="concluidos">10</p>
+        <p id="concluidos">0</p>
+      </div>
+      <div>
+        <strong>Saiu para entrega</strong>
+        <p id="entrega">0</p>
       </div>
       <div>
         <strong>Em preparo</strong>
-        <p id="preparo">3</p>
+        <p id="preparo">0</p>
       </div>
       <div>
         <strong>Cancelados</strong>
-        <p id="cancelados">2</p>
+        <p id="cancelados">0</p>
       </div>
     </section>
 

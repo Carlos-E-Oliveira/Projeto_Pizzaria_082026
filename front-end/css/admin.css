@@ -193,6 +193,7 @@ tr:hover {
 .badge-preparo { background: #fff3cd; color: #856404; }
 .badge-entrega { background: #d1ecf1; color: #0c5460; }
 .badge-concluido { background: #d4edda; color: #155724; }
+.badge-cancelado { background: #f8d7da; color: #721c24; }
 
 select:disabled {
     opacity: 0.6;

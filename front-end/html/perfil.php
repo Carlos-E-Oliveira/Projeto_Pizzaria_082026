@@ -132,7 +132,7 @@ $resultPedidos = $sqlPedidos->get_result();
                                     <?= date('d/m/Y H:i', strtotime($pedido['data_pedido'])) ?>
                                 </p>
 
-                                <?php if ($pedido['status'] !== 'Enviado' && $pedido['status'] !== 'Cancelado'): ?>
+                                <?php if ($pedido['status'] !== 'Concluido' && $pedido['status'] !== 'Cancelado' && $pedido['status'] !== 'Saiu para entrega'): ?>
 
                                     <button
                                         class="cancelar"

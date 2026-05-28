@@ -44,10 +44,30 @@ function carregarPedidos() {
         .then((data) => {
             const tbody = document.getElementById("lista-pedidos");
             tbody.innerHTML = "";
+
+            document.getElementById("total-dia").textContent = data.length;
+
+            document.getElementById("concluidos").textContent =
+                data.filter(p => p.status === "Concluido").length;
+
+            document.getElementById("entrega").textContent =
+                data.filter(p => p.status === "Saiu para entrega").length;
+
+            document.getElementById("preparo").textContent =
+                data.filter(p => p.status === "Em preparo").length;
+
+            document.getElementById("cancelados").textContent =
+                data.filter(p => p.status === "Cancelado").length;
+
             data.forEach((pedido) => {
                 const tr = document.createElement("tr");
-                const badgeClass = pedido.status === 'Concluido' ? 'badge-concluido' : 
-                                   pedido.status === 'Saiu para entrega' ? 'badge-entrega' : 'badge-preparo';
+                const badgeClass = pedido.status === 'Concluido'
+                        ? 'badge-concluido'
+                        : pedido.status === 'Saiu para entrega'
+                        ? 'badge-entrega'
+                        : pedido.status === 'Cancelado'
+                        ? 'badge-cancelado'
+                        : 'badge-preparo';
 
                 tr.innerHTML = `
                     <td>#${pedido.id}</td>
@@ -59,7 +79,8 @@ function carregarPedidos() {
                         <option value="Em preparo" ${pedido.status === "Em preparo" ? "selected" : ""}>Em preparo</option>
                         <option value="Saiu para entrega" ${pedido.status === "Saiu para entrega" ? "selected" : ""}>Saiu para entrega</option>
                         <option value="Concluido" ${pedido.status === "Concluido" ? "selected" : ""}>Concluido</option>
-                    </select></td>
+                        <option value="Cancelado" ${pedido.status === "Cancelado" ? "selected" : ""}>Cancelado</option>
+                        </select></td>
                 `;
                 tbody.appendChild(tr);
             });
