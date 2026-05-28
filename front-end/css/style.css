@@ -8,12 +8,12 @@
 /* Background */
 .pizza-container {
     position: fixed;
-    bottom: 0; /* Fixa na parte inferior da tela */
-    left: 50%; /* Centraliza horizontalmente */
+    bottom: 0;
+    left: 50%;
     transform: translateX(
         -50%
-    ); /* Ajusta para que o centro da imagem fique alinhado */
-    overflow: hidden; /* Garante que apenas a parte visível será exibida */
+    );
+    overflow: hidden;
     display: flex;
     justify-content: center;
     height: 100%;
