@@ -87,4 +87,11 @@ function carregarPedidos() {
         });
 }
 
+function exportarCSV() {
+
+    window.location.href =
+        "../../back-end/php/exportar_pedidos.php";
+
+}
+
 document.addEventListener("DOMContentLoaded", carregarPedidos);

@@ -62,6 +62,11 @@
         <strong>Cancelados</strong>
         <p id="cancelados">0</p>
       </div>
+       <div class="acoes-topo">
+        <button onclick="exportarCSV()" class="btn-exportar">
+            EXPORTAR CSV
+        </button>
+    </div>
     </section>
 
     <section class="pedidos">
@@ -72,7 +77,7 @@
             <th>Cliente</th>
             <th>Status</th>
             <th>Valor</th>
-            <th>Tempo</th>
+            <th>Hora</th>
             <th>Ações</th>
           </tr>
         </thead>
