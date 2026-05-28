@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+$user_id = $_SESSION['user_id'];
+
 require 'conexao.php';
 
 $nome = $_POST['nome'] ?? '';
@@ -25,14 +28,25 @@ if (
 
 $sql = $conn->prepare("
     INSERT INTO pedido
-    (nome, endereco, cidade, cep, forma_pagamento, pedido, total, status)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    (
+        user_id,
+        nome,
+        endereco,
+        cidade,
+        cep,
+        forma_pagamento,
+        pedido,
+        total,
+        status
+    )
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
 ");
 
 $status = "Em preparo";
 
 $sql->bind_param(
-    "ssssssds",
+    "issssssds",
+    $user_id,
     $nome,
     $endereco,
     $cidade,

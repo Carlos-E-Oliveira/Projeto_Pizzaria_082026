@@ -1,10 +1,12 @@
+<?php require '../../back-end/php/verifica_admin.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Gerenciamento de Cardápio</title>
-        <link rel="stylesheet" href="../css/pizzas.css" />
+        <link rel="stylesheet" href="../css/admin.css" />
         <link rel="stylesheet" href="../css/style.css" />
         <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
         <link
@@ -21,21 +23,20 @@
         <header>
             <nav>
                 <div class="container">
-                    <a href="#" class="logo">
-                        <img src="../img/logo.png" alt="Logo" />
-                    </a>
-                    <div class="menu-toggle" id="mobile-menu">
-                        <span class="bar1"></span>
-                        <span class="bar2"></span>
-                        <span class="bar3"></span>
-                    </div>
-                    <div class="nav-links">
-                        <a href="index.html" class="button">Home</a>
-                        <a href="cardapio.html" class="button">Cardápio</a>
-                        <a href="carrinho.html" class="button">Carrinho</a>
-                        <a href="sobre.html" class="button">Sobre Nós</a>
-                        <a href="perfil.php" class="button">Perfil</a>
-                    </div>
+                <a href="#" class="logo">
+                    <img src="../img/logo.png" alt="Logo" />
+                </a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="button">Home</a>
+                    <a href="cardapio.html" class="button">Cardápio</a>
+                    <a href="gerenciamento.php" class="button">Produtos</a>
+                    <a href="fila.php" class="button">Fila</a>
+                </div>
                 </div>
             </nav>
         </header>

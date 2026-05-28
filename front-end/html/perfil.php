@@ -8,17 +8,18 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+$user_id = $_SESSION['user_id'];
 $nome = $_SESSION['user_nome'];
 $email = $_SESSION['user_email'];
 
 $sqlPedidos = $conn->prepare("
     SELECT *
     FROM pedido
-    WHERE nome = ?
+    WHERE user_id = ?
     ORDER BY id DESC
 ");
 
-$sqlPedidos->bind_param("s", $nome);
+$sqlPedidos->bind_param("i", $_SESSION['user_id']);
 $sqlPedidos->execute();
 
 $resultPedidos = $sqlPedidos->get_result();
@@ -159,6 +160,7 @@ $resultPedidos = $sqlPedidos->get_result();
         <footer>
             <script src="../../back-end/js/mobile-menu.js"></script>
             <script src="../../back-end/js/sessao.js"></script>
+            <script src="../../back-end/js/controle_pedidos.js"></script>
         </footer>
     </body>
 </html>
