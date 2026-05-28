@@ -63,14 +63,6 @@ body {
     }
 }
 
-.gerenciamento {
-    background-image: url(../img/background.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-    height: 100%;
-}
-
 /* Index */
 .index-background h1 {
     font-family: 'Fjalla One', sans-serif;
