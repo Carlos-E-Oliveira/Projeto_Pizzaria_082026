@@ -56,7 +56,7 @@ $resultPedidos = $sqlPedidos->get_result();
                         <span class="bar2"></span>
                         <span class="bar3"></span>
                     </div>
-                    <div class="nav-links">
+                    <div class="nav-links" id="nav-links">
                         <a href="index.html" class="button">Home</a>
                         <a href="cardapio.html" class="button">Cardápio</a>
                         <a href="carrinho.html" class="button">Carrinho</a>
